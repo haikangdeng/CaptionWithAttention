@@ -1,6 +1,9 @@
 # CaptionWithAttention
 Attention-based Image Caption Generator
 
+![demo_image](https://user-images.githubusercontent.com/59696511/127633817-d4bc4b84-ce8c-4ae5-9391-de780547b7c9.png)
+<br/>
+
 This image-language model takes advantage of LSTM and pretrained ResNet and GloVe. A fancy idea is that the model extracts two features from input image using ResNet, one of size `(7, 7, 2048)` and the other of size `(2048)`. The former feature contains location information while the latter one has more concentrated information in each channel. In practice, the former feature is attended to LSTM states to generate context vector in each step, which is then concatenated with input word vector to form LSTM input. The latter feature(concentrated), after running through a linear layer, is passed to the LSTM as initial cell state.
 <br/>
 <br/>
